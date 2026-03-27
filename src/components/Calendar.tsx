@@ -8,7 +8,7 @@ export default function Calendar() {
     <section className="py-20">
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
         <div className="text-[0.72rem] tracking-[0.12em] uppercase text-orange font-semibold mb-3 flex items-center gap-2.5 before:content-[''] before:block before:w-7 before:h-px before:bg-orange">
-          05 · Content Calendar
+          10 · Content Calendar
         </div>
         <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold leading-[1.1] mb-4">Instagram Weekly Blueprint</h2>
         <p className="max-w-[620px] text-[0.95rem] text-white/70 leading-relaxed">
@@ -60,9 +60,18 @@ export default function Calendar() {
               formats: [{ label: "LinkedIn", class: "bg-orange/15 text-orange2" }]
             }
           ].map((row, i) => (
-            <div key={i} className="grid grid-cols-[100px_1fr] md:grid-cols-[110px_1fr_180px] bg-white/5 p-4 md:px-6 gap-6 items-center border-t border-white/5 hover:bg-white/10 transition-colors">
+            <div key={i} className="grid grid-cols-[100px_1fr] md:grid-cols-[110px_1fr_180px] bg-white/5 p-4 md:px-6 gap-6 items-start md:items-center border-t border-white/5 hover:bg-white/10 transition-colors">
               <div className="font-display text-[0.85rem] font-bold">{row.day}</div>
-              <motion.div key={row.content} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[0.85rem] text-white/70 leading-relaxed">{row.content}</motion.div>
+              <div className="flex flex-col gap-3 md:block">
+                <motion.div key={row.content} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[0.85rem] text-white/70 leading-relaxed">{row.content}</motion.div>
+                <div className="flex md:hidden flex-wrap gap-1.5 mt-1">
+                  {row.formats.map((format, j) => (
+                    <span key={j} className={`text-[0.68rem] px-2.5 py-1 rounded-full font-semibold tracking-wider uppercase ${format.class}`}>
+                      {format.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
               <div className="hidden md:flex flex-wrap gap-1.5">
                 {row.formats.map((format, j) => (
                   <span key={j} className={`text-[0.68rem] px-2.5 py-1 rounded-full font-semibold tracking-wider uppercase ${format.class}`}>

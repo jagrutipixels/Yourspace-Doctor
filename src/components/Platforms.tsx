@@ -45,7 +45,7 @@ export default function Platforms() {
               freq: "3×/week"
             }
           ].map((platform, i) => (
-            <div key={i} className="grid grid-cols-1 md:grid-cols-[200px_1fr_auto] items-center gap-8 bg-white/5 border border-white/10 rounded-xl p-6 md:px-8 hover:border-white/20 transition-colors">
+            <div key={i} className="grid grid-cols-1 md:grid-cols-[200px_1fr_auto] items-start md:items-center gap-5 md:gap-8 bg-white/5 border border-white/10 rounded-xl p-6 md:px-8 hover:border-white/20 transition-colors">
               <div>
                 <div className="font-display text-[1.1rem] font-bold">{platform.icon} {platform.name}</div>
                 <div className="text-[0.78rem] text-slate mt-0.5">{platform.sub}</div>
@@ -55,7 +55,7 @@ export default function Platforms() {
                 key={platform.freq} 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
-                className="font-display text-[0.8rem] font-bold whitespace-nowrap text-orange2 bg-orange/10 border border-orange/30 px-3.5 py-1.5 rounded-full text-center"
+                className="font-display text-[0.8rem] font-bold whitespace-nowrap text-orange2 bg-orange/10 border border-orange/30 px-3.5 py-1.5 rounded-full text-center md:text-left self-start md:self-auto"
               >
                 {platform.freq}
               </motion.div>

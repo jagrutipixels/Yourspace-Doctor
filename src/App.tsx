@@ -33,8 +33,6 @@ export default function App() {
       <hr className="border-none border-t border-white/10 m-0" />
       <Pillars />
       <hr className="border-none border-t border-white/10 m-0" />
-      <Calendar />
-      <hr className="border-none border-t border-white/10 m-0" />
       <Hashtags />
       <hr className="border-none border-t border-white/10 m-0" />
       <QuickWins />
@@ -44,6 +42,8 @@ export default function App() {
       <Roadmap />
       <hr className="border-none border-t border-white/10 m-0" />
       <Pricing />
+      <hr className="border-none border-t border-white/10 m-0" />
+      <Calendar />
       <hr className="border-none border-t border-white/10 m-0" />
       <CTA />
       <Footer />

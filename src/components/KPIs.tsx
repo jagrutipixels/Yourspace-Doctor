@@ -8,7 +8,7 @@ export default function KPIs() {
     <section className="py-20">
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
         <div className="text-[0.72rem] tracking-[0.12em] uppercase text-orange font-semibold mb-3 flex items-center gap-2.5 before:content-[''] before:block before:w-7 before:h-px before:bg-orange">
-          08 · KPIs & Measurement
+          07 · KPIs & Measurement
         </div>
         <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold leading-[1.1] mb-4">How We Measure Success</h2>
         <p className="max-w-[620px] text-[0.95rem] text-white/70 leading-relaxed">

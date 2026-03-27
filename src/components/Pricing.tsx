@@ -9,7 +9,7 @@ export default function Pricing() {
     <section id="pricing" className="py-20">
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
         <div className="text-[0.72rem] tracking-[0.12em] uppercase text-orange font-semibold mb-3 flex items-center gap-2.5 before:content-[''] before:block before:w-7 before:h-px before:bg-orange">
-          10 · Investment Summary
+          09 · Investment Summary
         </div>
         <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold leading-[1.1] mb-4">Transparent Monthly Pricing</h2>
         <p className="max-w-[620px] text-[0.95rem] text-white/70 leading-relaxed">
@@ -32,7 +32,7 @@ export default function Pricing() {
             />
             <div className="flex justify-between mt-2.5">
               {["₹30k", "₹45k", "₹60k", "₹75k", "₹90k"].map((label, i) => (
-                <span key={i} className={`text-[0.78rem] transition-colors ${i === idx ? 'text-purple-600 font-bold' : 'text-gray-400 font-medium'}`}>
+                <span key={i} className={`text-[0.7rem] sm:text-[0.78rem] transition-colors ${i === idx ? 'text-purple-600 font-bold' : 'text-gray-400 font-medium'}`}>
                   {label}
                 </span>
               ))}
@@ -68,7 +68,7 @@ export default function Pricing() {
               <div>
                 <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">Static & Carousel Posts</h4>
                 <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">
-                  <motion.span key={plan.static} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Static and <motion.span key={plan.static} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Carousel posts provided free of charge.
+                  <motion.span key={`static-1-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Static and <motion.span key={`static-2-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Carousel posts provided free of charge.
                 </p>
               </div>
               <div className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">Complimentary</div>

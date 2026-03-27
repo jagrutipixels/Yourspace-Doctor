@@ -28,18 +28,11 @@ export default function CTA() {
               <div className="text-[0.9rem] font-medium text-white"><a href="mailto:abhishek.gujar1202@gmail.com" className="text-orange2 hover:underline">abhishek.gujar1202@gmail.com</a></div>
             </div>
           </div>
-          <div className="flex items-center gap-4 py-3 border-b border-white/10">
+          <div className="flex items-center gap-4 py-3">
             <div className="w-9 h-9 rounded-lg flex items-center justify-center text-base shrink-0 bg-[#1A7A6E]/15">📞</div>
             <div className="flex-1">
               <div className="text-[0.7rem] text-slate uppercase tracking-widest mb-0.5">Phone / WhatsApp</div>
               <div className="text-[0.9rem] font-medium text-white"><a href="tel:+917400310443" className="text-orange2 hover:underline">+91 7400310443</a></div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 py-3">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center text-base shrink-0 bg-[#7F77DD]/15">📸</div>
-            <div className="flex-1">
-              <div className="text-[0.7rem] text-slate uppercase tracking-widest mb-0.5">Client Instagram</div>
-              <div className="text-[0.9rem] font-medium text-white"><a href="https://www.instagram.com/yourspacedoctor/" target="_blank" rel="noreferrer" className="text-orange2 hover:underline">@yourspacedoctor</a></div>
             </div>
           </div>
         </div>
