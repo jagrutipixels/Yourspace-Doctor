@@ -13,7 +13,7 @@ export default function Pricing() {
         </div>
         <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold leading-[1.1] mb-4">Transparent Monthly Pricing</h2>
         <p className="max-w-[620px] text-[0.95rem] text-white/70 leading-relaxed">
-          Choose the plan that fits your goals and budget. All plans include complimentary static & carousel posts and weekly stories management. Drag the slider to explore each tier.
+          Choose the plan that fits your goals and budget. All plans include a balanced mix of video and static content, plus weekly stories management. Drag the slider to explore each tier.
         </p>
 
         <div className="bg-[#F0F4F8] rounded-3xl p-6 sm:p-8 md:p-12 mt-10 text-[#1A2535]">
@@ -24,14 +24,14 @@ export default function Pricing() {
             <input 
               type="range" 
               className="custom-slider" 
-              min="0" max="4" 
+              min="0" max="3" 
               value={idx} 
               step="1"
               onChange={(e) => setIdx(parseInt(e.target.value))}
               style={{ '--progress': `${plan.progress}%` } as CSSProperties}
             />
             <div className="flex justify-between mt-2.5">
-              {["₹30k", "₹45k", "₹60k", "₹75k", "₹90k"].map((label, i) => (
+              {["₹45k", "₹60k", "₹75k", "₹90k"].map((label, i) => (
                 <span key={i} className={`text-[0.7rem] sm:text-[0.78rem] transition-colors ${i === idx ? 'text-purple-600 font-bold' : 'text-gray-400 font-medium'}`}>
                   {label}
                 </span>
@@ -46,11 +46,11 @@ export default function Pricing() {
                   Batch Shooting (<motion.span key={plan.shootDays} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.shootDays}</motion.span> Days)
                 </h4>
                 <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">
-                  All content for the month captured during <motion.span key={plan.shootDays} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.shootDays}</motion.span> shoot days (₹12,000/day).
+                  All content for the month captured during <motion.span key={plan.shootDays} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.shootDays}</motion.span> shoot days (₹8,500/day).
                 </p>
               </div>
               <motion.div key={plan.shootDays} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">
-                ₹{(plan.shootDays * 12000).toLocaleString('en-IN')}
+                ₹{(plan.shootDays * 8500).toLocaleString('en-IN')}
               </motion.div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
@@ -58,20 +58,22 @@ export default function Pricing() {
                 <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">
                   Video Editing (<motion.span key={plan.reels} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.reels}</motion.span> Reels)
                 </h4>
-                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).</p>
+                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹900/reel).</p>
               </div>
               <motion.div key={plan.reels} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">
-                ₹{(plan.reels * 600).toLocaleString('en-IN')}
+                ₹{(plan.reels * 900).toLocaleString('en-IN')}
               </motion.div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
               <div>
                 <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">Static & Carousel Posts</h4>
                 <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">
-                  <motion.span key={`static-1-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Static and <motion.span key={`static-2-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Carousel posts provided free of charge.
+                  <motion.span key={`static-1-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Static and <motion.span key={`static-2-${plan.static}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Carousel posts (₹500/post).
                 </p>
               </div>
-              <div className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">Complimentary</div>
+              <motion.div key={plan.static} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">
+                ₹{(plan.static * 500).toLocaleString('en-IN')}
+              </motion.div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
               <div>
@@ -104,6 +106,10 @@ export default function Pricing() {
             <a href="mailto:abhishek.gujar1202@gmail.com" className="bg-purple-600 hover:bg-purple-500 text-white font-display font-bold text-[0.85rem] px-6 py-3 rounded-lg tracking-wide transition-all hover:-translate-y-[1px] whitespace-nowrap">
               Contact Us →
             </a>
+          </div>
+
+          <div className="mt-6 text-center text-[0.8rem] text-gray-500 px-4">
+            <span className="text-purple-600 font-bold">* Note:</span> Meta Ad & Google Ad budgets are not included in the above pricing. If you choose to run paid ads, the ad spend will be billed separately on actuals.
           </div>
         </div>
       </div>

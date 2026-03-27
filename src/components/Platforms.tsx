@@ -26,8 +26,8 @@ export default function Platforms() {
             {
               icon: "💼",
               name: "LinkedIn",
-              sub: "B2B Growth Engine — Untapped",
-              desc: "Zero presence, massive opportunity. Position Your Space as India's leading flexible warehousing partner. Publish thought leadership on supply chain, 3PL trends, document digitisation ROI. Share B2B case studies to build pipeline with logistics heads and founders.",
+              sub: "B2B Growth Engine — Underutilized",
+              desc: "Existing page, massive opportunity to scale. Position Your Space as India's leading flexible warehousing partner. Publish thought leadership on supply chain, 3PL trends, document digitisation ROI. Share B2B case studies to build relationships with logistics heads and founders.",
               freq: plan.liFreq
             },
             {

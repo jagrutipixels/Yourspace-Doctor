@@ -32,11 +32,11 @@ export default function Situation() {
             <ul className="flex flex-col gap-2.5">
               {[
                 "No Reels or short-form video strategy — highest organic reach format on Instagram",
-                "No LinkedIn presence for B2B segment (3PL, document, business storage)",
+                "Underutilized LinkedIn presence for B2B segment (3PL, document, business storage)",
                 "377 Google reviews not converted into social proof content — untapped gold mine",
                 "5 city locations have no individual local targeting or city-specific content",
                 "No link-in-bio strategy directing followers to quote tool or WhatsApp",
-                "Instagram bio and highlights not optimised for lead capture"
+                "Instagram bio and highlights not optimised for inquiries"
               ].map((item, i) => (
                 <li key={i} className="text-[0.88rem] text-white/70 flex gap-2.5 items-start leading-relaxed before:content-[''] before:block before:w-1.5 before:h-1.5 before:rounded-full before:shrink-0 before:mt-1.5 before:bg-orange">
                   {item}

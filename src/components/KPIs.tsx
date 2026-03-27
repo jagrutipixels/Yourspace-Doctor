@@ -16,12 +16,12 @@ export default function KPIs() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           {[
-            { metric: "> 2%", label: "Instagram Engagement Rate", desc: "Industry average is 0.6%. Anything above 2% signals strong audience resonance.", color: "text-orange" },
-            { metric: "2–5%", label: "Monthly Follower Growth", desc: "Consistent organic growth. Spikes from Reels; steady base from carousels and stories.", color: "text-[#3BC9BA]" },
-            { metric: "Track", label: "Profile Visits → Quote Clicks", desc: "The conversion metric that matters most — how many social visitors become leads.", color: "text-gold" },
-            { metric: plan.views, label: "Reel Views per Post", desc: "Target within 30 days of consistent Reel publishing. Views scale with frequency.", color: "text-white" },
-            { metric: "500+", label: "LinkedIn Impressions / Month", desc: "B2B reach metric. Build toward 500 in month 1, then 2,000+ by month 3.", color: "text-[#AFA9EC]" },
-            { metric: "Count", label: "WhatsApp Leads via Social", desc: "Track monthly inbound WhatsApp messages attributed to social CTAs. Direct revenue signal.", color: "text-[#3BC9BA]" }
+            { metric: "Est. 2%+", label: "Instagram Engagement Rate", desc: "Industry average is 0.6%. We aim to build toward 2%+ to signal strong audience resonance.", color: "text-orange" },
+            { metric: "Est. 2–5%", label: "Monthly Follower Growth", desc: "Targeted monthly organic growth. Highly dependent on algorithm reach and consistency.", color: "text-[#3BC9BA]" },
+            { metric: "Track", label: "Profile Visits → Quote Clicks", desc: "A key intent metric — tracking how many social visitors are interested enough to explore pricing.", color: "text-gold" },
+            { metric: plan.views, label: "Reel Views per Month", desc: "Estimated average reach after 60-90 days of consistent publishing. Organic reach varies by algorithm.", color: "text-white" },
+            { metric: "Est. 500+", label: "LinkedIn Impressions / Month", desc: "B2B reach metric. We aim to establish a baseline of 500+ impressions and grow steadily.", color: "text-[#AFA9EC]" },
+            { metric: "Monitor", label: "WhatsApp Link Clicks", desc: "Track how often users click the WhatsApp link to gauge audience intent and content effectiveness.", color: "text-[#3BC9BA]" }
           ].map((kpi, i) => (
             <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6">
               <motion.div 

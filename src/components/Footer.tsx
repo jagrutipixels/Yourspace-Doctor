@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
         <div>Confidential · All Rights Reserved</div>
         <div className="hidden md:block text-white/20">|</div>
-        <div>Design by Abhishek Gujar</div>
+        <div>Design by <a href="https://www.icreatepixels.in" target="_blank" rel="noreferrer" className="text-orange2 hover:underline">Abhishek Gujar</a></div>
       </div>
     </footer>
   );

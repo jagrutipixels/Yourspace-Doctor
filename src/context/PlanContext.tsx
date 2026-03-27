@@ -2,18 +2,6 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 export const plans = [
   {
-    price: 30000,
-    total: "₹30,000 / month",
-    reels: 10,
-    static: 8,
-    shootDays: 2,
-    igFreq: "4–5 posts/week",
-    liFreq: "2–3 posts/week",
-    ytFreq: "2 Shorts/week",
-    views: "10K+",
-    progress: 0
-  },
-  {
     price: 45000,
     total: "₹45,000 / month",
     reels: 15,
@@ -22,8 +10,8 @@ export const plans = [
     igFreq: "6–7 posts/week",
     liFreq: "3–4 posts/week",
     ytFreq: "3–4 Shorts/week",
-    views: "25K+",
-    progress: 25
+    views: "Est. 25K+",
+    progress: 0
   },
   {
     price: 60000,
@@ -34,8 +22,8 @@ export const plans = [
     igFreq: "8–9 posts/week",
     liFreq: "4–5 posts/week",
     ytFreq: "5 Shorts/week",
-    views: "50K+",
-    progress: 50
+    views: "Est. 50K+",
+    progress: 33.33
   },
   {
     price: 75000,
@@ -46,8 +34,8 @@ export const plans = [
     igFreq: "10–12 posts/week",
     liFreq: "5–6 posts/week",
     ytFreq: "6 Shorts/week",
-    views: "80K+",
-    progress: 75
+    views: "Est. 80K+",
+    progress: 66.66
   },
   {
     price: 90000,
@@ -58,7 +46,7 @@ export const plans = [
     igFreq: "12–14 posts/week",
     liFreq: "6–7 posts/week",
     ytFreq: "7+ Shorts/week",
-    views: "120K+",
+    views: "Est. 120K+",
     progress: 100
   }
 ];

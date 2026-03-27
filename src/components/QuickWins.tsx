@@ -33,8 +33,8 @@ export default function QuickWins() {
             },
             {
               num: "05",
-              title: "Launch LinkedIn Company Page",
-              desc: "Create the page, post 3 founding pieces: company overview, a 3PL case study, and a thought leadership article on India warehousing trends. B2B credibility from day one."
+              title: "Revamp LinkedIn Company Page",
+              desc: "Optimize the existing page, post 3 foundational pieces: company overview, a 3PL case study, and a thought leadership article on India warehousing trends. B2B credibility from day one."
             },
             {
               num: "06",

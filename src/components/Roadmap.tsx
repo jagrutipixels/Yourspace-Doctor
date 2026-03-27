@@ -17,7 +17,7 @@ export default function Roadmap() {
             <div className="font-display text-[0.7rem] font-bold tracking-widest uppercase text-slate">Month 1 · Foundation</div>
             <h3 className="text-base mb-1">Build & Launch</h3>
             <ul className="list-none text-center">
-              {["Optimise Instagram bio & highlights", "Set up link-in-bio (Linktree)", "Launch LinkedIn company page", "Produce first 4 Reels", "Convert 10 reviews to carousels", "Start YouTube Shorts repurposing"].map((item, i) => (
+              {["Optimise Instagram bio & highlights", "Set up link-in-bio (Linktree)", "Revamp LinkedIn company page", "Produce first 4 Reels", "Convert 10 reviews to carousels", "Start YouTube Shorts repurposing"].map((item, i) => (
                 <li key={i} className="text-[0.8rem] text-white/55 py-1">{item}</li>
               ))}
             </ul>
@@ -39,7 +39,7 @@ export default function Roadmap() {
             <div className="font-display text-[0.7rem] font-bold tracking-widest uppercase text-slate">Month 3 · Optimise</div>
             <h3 className="text-base mb-1">Convert & Retain</h3>
             <ul className="list-none text-center">
-              {["Retargeting ads to warm audiences", "Seasonal campaign (Diwali / Moving)", "Customer video testimonial series", "LinkedIn lead generation campaign", "Full 90-day performance review", "Q4 strategy planning"].map((item, i) => (
+              {["Retargeting ads to warm audiences", "Seasonal campaign (Diwali / Moving)", "Customer video testimonial series", "LinkedIn B2B awareness campaign", "Full 90-day performance review", "Q4 strategy planning"].map((item, i) => (
                 <li key={i} className="text-[0.8rem] text-white/55 py-1">{item}</li>
               ))}
             </ul>
