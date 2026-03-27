@@ -1,66 +1,9 @@
-import { useState, CSSProperties } from 'react';
-
-const plans = [
-  {
-    total: "₹30,000 / month",
-    shootTitle: "Batch Shooting (2 Days)",
-    shootDesc: "All content for the month captured during 2 shoot days (₹12,000/day).",
-    shootPrice: "₹24,000",
-    editTitle: "Video Editing (10 Reels)",
-    editDesc: "A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).",
-    editPrice: "₹6,000",
-    staticDesc: "4 Static and 4 Carousel posts provided free of charge.",
-    progress: 0
-  },
-  {
-    total: "₹45,000 / month",
-    shootTitle: "Batch Shooting (3 Days)",
-    shootDesc: "All content for the month captured during 3 shoot days (₹12,000/day).",
-    shootPrice: "₹36,000",
-    editTitle: "Video Editing (15 Reels)",
-    editDesc: "A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).",
-    editPrice: "₹9,000",
-    staticDesc: "6 Static and 6 Carousel posts provided free of charge.",
-    progress: 25
-  },
-  {
-    total: "₹60,000 / month",
-    shootTitle: "Batch Shooting (4 Days)",
-    shootDesc: "All content for the month captured during 4 shoot days (₹12,000/day).",
-    shootPrice: "₹48,000",
-    editTitle: "Video Editing (20 Reels)",
-    editDesc: "A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).",
-    editPrice: "₹12,000",
-    staticDesc: "8 Static and 8 Carousel posts provided free of charge.",
-    progress: 50
-  },
-  {
-    total: "₹75,000 / month",
-    shootTitle: "Batch Shooting (5 Days)",
-    shootDesc: "All content for the month captured during 5 shoot days (₹12,000/day).",
-    shootPrice: "₹60,000",
-    editTitle: "Video Editing (25 Reels)",
-    editDesc: "A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).",
-    editPrice: "₹15,000",
-    staticDesc: "10 Static and 10 Carousel posts provided free of charge.",
-    progress: 75
-  },
-  {
-    total: "₹90,000 / month",
-    shootTitle: "Batch Shooting (6 Days)",
-    shootDesc: "All content for the month captured during 6 shoot days (₹12,000/day).",
-    shootPrice: "₹72,000",
-    editTitle: "Video Editing (30 Reels)",
-    editDesc: "A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).",
-    editPrice: "₹18,000",
-    staticDesc: "12 Static and 12 Carousel posts provided free of charge.",
-    progress: 100
-  }
-];
+import { CSSProperties } from 'react';
+import { usePlan } from '../context/PlanContext';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function Pricing() {
-  const [idx, setIdx] = useState(0);
-  const p = plans[idx];
+  const { idx, setIdx, plan } = usePlan();
 
   return (
     <section id="pricing" className="py-20">
@@ -85,7 +28,7 @@ export default function Pricing() {
               value={idx} 
               step="1"
               onChange={(e) => setIdx(parseInt(e.target.value))}
-              style={{ '--progress': `${p.progress}%` } as CSSProperties}
+              style={{ '--progress': `${plan.progress}%` } as CSSProperties}
             />
             <div className="flex justify-between mt-2.5">
               {["₹30k", "₹45k", "₹60k", "₹75k", "₹90k"].map((label, i) => (
@@ -99,22 +42,34 @@ export default function Pricing() {
           <div className="bg-white rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
               <div>
-                <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">{p.shootTitle}</h4>
-                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">{p.shootDesc}</p>
+                <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">
+                  Batch Shooting (<motion.span key={plan.shootDays} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.shootDays}</motion.span> Days)
+                </h4>
+                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">
+                  All content for the month captured during <motion.span key={plan.shootDays} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.shootDays}</motion.span> shoot days (₹12,000/day).
+                </p>
               </div>
-              <div className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">{p.shootPrice}</div>
+              <motion.div key={plan.shootDays} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">
+                ₹{(plan.shootDays * 12000).toLocaleString('en-IN')}
+              </motion.div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
               <div>
-                <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">{p.editTitle}</h4>
-                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">{p.editDesc}</p>
+                <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">
+                  Video Editing (<motion.span key={plan.reels} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.reels}</motion.span> Reels)
+                </h4>
+                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">A balanced mix of High-Quality cinematic reels and Raw/Light reels (₹600/reel).</p>
               </div>
-              <div className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">{p.editPrice}</div>
+              <motion.div key={plan.reels} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">
+                ₹{(plan.reels * 600).toLocaleString('en-IN')}
+              </motion.div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 md:px-8 border-b border-gray-100 hover:bg-gray-50 transition-colors gap-2 md:gap-0">
               <div>
                 <h4 className="font-display text-[0.95rem] font-bold text-[#1A2535] mb-1">Static & Carousel Posts</h4>
-                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">{p.staticDesc}</p>
+                <p className="text-[0.8rem] text-gray-500 leading-relaxed m-0">
+                  <motion.span key={plan.static} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Static and <motion.span key={plan.static} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{plan.static / 2}</motion.span> Carousel posts provided free of charge.
+                </p>
               </div>
               <div className="font-display text-[1.1rem] font-bold text-purple-600 whitespace-nowrap">Complimentary</div>
             </div>
@@ -134,7 +89,17 @@ export default function Pricing() {
           <div className="flex flex-col sm:flex-row justify-between items-center p-7 md:px-8 bg-[#1A1F36] rounded-xl mt-6 gap-4 sm:gap-0 text-center sm:text-left">
             <div>
               <div className="text-[0.72rem] tracking-[0.1em] uppercase text-white/50 mb-1">Total Monthly Investment</div>
-              <div className="font-display text-3xl font-extrabold text-white">{p.total}</div>
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={plan.total}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="font-display text-3xl font-extrabold text-white"
+                >
+                  {plan.total}
+                </motion.div>
+              </AnimatePresence>
             </div>
             <a href="mailto:abhishek.gujar1202@gmail.com" className="bg-purple-600 hover:bg-purple-500 text-white font-display font-bold text-[0.85rem] px-6 py-3 rounded-lg tracking-wide transition-all hover:-translate-y-[1px] whitespace-nowrap">
               Contact Us →

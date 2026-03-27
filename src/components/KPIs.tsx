@@ -1,4 +1,9 @@
+import { usePlan } from '../context/PlanContext';
+import { motion } from 'motion/react';
+
 export default function KPIs() {
+  const { plan } = usePlan();
+
   return (
     <section className="py-20">
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
@@ -14,12 +19,19 @@ export default function KPIs() {
             { metric: "> 2%", label: "Instagram Engagement Rate", desc: "Industry average is 0.6%. Anything above 2% signals strong audience resonance.", color: "text-orange" },
             { metric: "2–5%", label: "Monthly Follower Growth", desc: "Consistent organic growth. Spikes from Reels; steady base from carousels and stories.", color: "text-[#3BC9BA]" },
             { metric: "Track", label: "Profile Visits → Quote Clicks", desc: "The conversion metric that matters most — how many social visitors become leads.", color: "text-gold" },
-            { metric: "10K+", label: "Reel Views per Post", desc: "Target within 30 days of consistent Reel publishing. Views scale with frequency.", color: "text-white" },
+            { metric: plan.views, label: "Reel Views per Post", desc: "Target within 30 days of consistent Reel publishing. Views scale with frequency.", color: "text-white" },
             { metric: "500+", label: "LinkedIn Impressions / Month", desc: "B2B reach metric. Build toward 500 in month 1, then 2,000+ by month 3.", color: "text-[#AFA9EC]" },
             { metric: "Count", label: "WhatsApp Leads via Social", desc: "Track monthly inbound WhatsApp messages attributed to social CTAs. Direct revenue signal.", color: "text-[#3BC9BA]" }
           ].map((kpi, i) => (
             <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6">
-              <div className={`font-display text-[1.8rem] font-extrabold mb-0.5 ${kpi.color}`}>{kpi.metric}</div>
+              <motion.div 
+                key={kpi.metric} 
+                initial={{ opacity: 0, y: 5 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                className={`font-display text-[1.8rem] font-extrabold mb-0.5 ${kpi.color}`}
+              >
+                {kpi.metric}
+              </motion.div>
               <div className="text-[0.78rem] text-slate uppercase tracking-wider">{kpi.label}</div>
               <div className="text-[0.8rem] mt-2 text-white/50">{kpi.desc}</div>
             </div>

@@ -17,10 +17,11 @@ import Roadmap from './components/Roadmap';
 import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import { PlanProvider } from './context/PlanContext';
 
 export default function App() {
   return (
-    <>
+    <PlanProvider>
       <Nav />
       <Hero />
       <hr className="border-none border-t border-white/10 m-0" />
@@ -46,7 +47,7 @@ export default function App() {
       <hr className="border-none border-t border-white/10 m-0" />
       <CTA />
       <Footer />
-    </>
+    </PlanProvider>
   );
 }
 

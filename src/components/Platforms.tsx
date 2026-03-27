@@ -1,4 +1,9 @@
+import { usePlan } from '../context/PlanContext';
+import { motion } from 'motion/react';
+
 export default function Platforms() {
+  const { plan } = usePlan();
+
   return (
     <section className="py-20">
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
@@ -16,21 +21,21 @@ export default function Platforms() {
               name: "Instagram",
               sub: "Primary Growth Channel",
               desc: "Your highest ROI channel. Reels drive 47% faster follower growth. Carousels earn highest saves and shares. Target households, urban professionals, and collectors via city-specific location tags, geo-targeting, and moving season hooks across all 5 cities.",
-              freq: "4–5 posts/week"
+              freq: plan.igFreq
             },
             {
               icon: "💼",
               name: "LinkedIn",
               sub: "B2B Growth Engine — Untapped",
               desc: "Zero presence, massive opportunity. Position Your Space as India's leading flexible warehousing partner. Publish thought leadership on supply chain, 3PL trends, document digitisation ROI. Share B2B case studies to build pipeline with logistics heads and founders.",
-              freq: "2–3 posts/week"
+              freq: plan.liFreq
             },
             {
               icon: "▶️",
               name: "YouTube Shorts",
               sub: "SEO & Discovery Layer",
               desc: "Repurpose every Instagram Reel to YouTube Shorts — zero additional production cost, significant search discoverability. \"Storage solutions Mumbai\" ranking on YouTube converts high-intent searchers at a far lower cost than Google Ads.",
-              freq: "2 Shorts/week"
+              freq: plan.ytFreq
             },
             {
               icon: "💬",
@@ -46,9 +51,14 @@ export default function Platforms() {
                 <div className="text-[0.78rem] text-slate mt-0.5">{platform.sub}</div>
               </div>
               <div className="text-[0.85rem] text-white/65 leading-relaxed">{platform.desc}</div>
-              <div className="font-display text-[0.8rem] font-bold whitespace-nowrap text-orange2 bg-orange/10 border border-orange/30 px-3.5 py-1.5 rounded-full text-center">
+              <motion.div 
+                key={platform.freq} 
+                initial={{ opacity: 0, scale: 0.9 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                className="font-display text-[0.8rem] font-bold whitespace-nowrap text-orange2 bg-orange/10 border border-orange/30 px-3.5 py-1.5 rounded-full text-center"
+              >
                 {platform.freq}
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
