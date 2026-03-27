@@ -17,6 +17,7 @@ import Roadmap from './components/Roadmap';
 import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import GoToTop from './components/GoToTop';
 import { PlanProvider } from './context/PlanContext';
 
 export default function App() {
@@ -47,6 +48,7 @@ export default function App() {
       <hr className="border-none border-t border-white/10 m-0" />
       <CTA />
       <Footer />
+      <GoToTop />
     </PlanProvider>
   );
 }
