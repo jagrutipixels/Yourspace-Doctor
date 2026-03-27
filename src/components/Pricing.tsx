@@ -84,7 +84,7 @@ export default function Pricing() {
             </div>
             <div className="p-5 md:px-8 bg-gray-50 border-t border-gray-100">
               <div className="text-[0.68rem] tracking-[0.1em] uppercase font-bold text-gray-400 mb-1">Payment Terms</div>
-              <p className="text-[0.8rem] text-gray-500 m-0">50% advance payment required to confirm booking and initiate execution. Remaining 50% to be completed as per the agreed cycle.</p>
+              <p className="text-[0.8rem] text-gray-500 m-0">60% advance payment required to confirm booking and initiate execution. Remaining 40% to be completed as per the agreed cycle.</p>
             </div>
           </div>
 
